@@ -46,13 +46,7 @@ const AdminLogin = () => {
   return (
     <div className="">
       <main className="main flex items-center flex-col">
-        <Image
-          src="/images/Group-230.png"
-          height={"7"}
-          width={"5"}
-          alt=""
-          className="m-4"
-        />
+        <img src="/images/Group-230.png" alt="" className="m-4" />
         <label htmlFor="mySelect" className="text-red-700">
           Sign-up with Nami Wallet
         </label>
