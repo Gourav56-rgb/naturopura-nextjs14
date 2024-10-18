@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React from "react";
 
 const Sidebar = () => {
@@ -18,7 +19,7 @@ const Sidebar = () => {
         /> */}
         <div className="flex justify-between items-start">
           {/* Left Side - Breakfast Text */}
-          <div>
+          <div className="gap-5">
             <h1 className="font-bold text-2xl">+ Breakfast</h1>
             <h1 className="font-bold text-2xl">+ Breakfast</h1>
             <h1 className="font-bold text-2xl">+ Breakfast</h1>
@@ -33,52 +34,72 @@ const Sidebar = () => {
 
           {/* Right Side - Image */}
           <div className="ml-4">
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
             />
-            <img
+            <Image
+              width={200}
+              height={200}
               src="https://images.immediate.co.uk/production/volatile/sites/30/2017/08/smoothie-bowl-3a8632c.jpg?quality=90&webp=true&resize=300,272" // Replace with the actual image path
               alt="Breakfast"
               className="w-10 h-8 object-cover rounded-lg" // Adjust size as needed
@@ -93,48 +114,6 @@ const Sidebar = () => {
           {/* <Menu className="w-4 h-4" /> */}
         </button>
       </div>
-
-      {/* LINKS */}
-      {/* <div className="flex-grow mt-8">
-        <SidebarLink
-          href="/dashboard"
-          icon={Layout}
-          label="Dashboard"
-          isCollapsed={isSidebarCollapsed}
-        />
-        <SidebarLink
-          href="/inventory"
-          icon={Archive}
-          label="Inventory"
-          isCollapsed={isSidebarCollapsed}
-        />
-        <SidebarLink
-          href="/products"
-          icon={Clipboard}
-          label="Products"
-          isCollapsed={isSidebarCollapsed}
-        />
-        <SidebarLink
-          href="/users"
-          icon={User}
-          label="Users"
-          isCollapsed={isSidebarCollapsed}
-        />
-        <SidebarLink
-          href="/settings"
-          icon={SlidersHorizontal}
-          label="Settings"
-          isCollapsed={isSidebarCollapsed}
-        />
-        <SidebarLink
-          href="/expenses"
-          icon={CircleDollarSign}
-          label="Expenses"
-          isCollapsed={isSidebarCollapsed}
-        />
-      </div> */}
-
-      {/* FOOTER */}
     </div>
   );
 };

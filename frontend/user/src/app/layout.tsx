@@ -6,6 +6,30 @@ import { usePathname } from "next/navigation"; // Import usePathname
 import "./globals.css";
 import Navbar from "./(components)/Navbar";
 import Sidebar from "./(components)/Sidebar";
+import Footer from "./(components)/Footer";
+import { getDefaultConfig } from "@rainbow-me/rainbowkit";
+import { RainbowKitProvider, lightTheme } from "@rainbow-me/rainbowkit";
+import { mainnet } from "wagmi/chains";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { WagmiProvider, http } from "wagmi";
+import "@rainbow-me/rainbowkit/styles.css";
+import dynamic from "next/dynamic";
+import ProtectedRoute from "@/auth/ProtectedRoute";
+
+const config = getDefaultConfig({
+  appName: "RainbowKit demo",
+  projectId: "YOUR_PROJECT_ID",
+  chains: [mainnet],
+  transports: {
+    [mainnet.id]: http(),
+  },
+});
+
+const queryClient = new QueryClient();
+
+const ReduxProvider = dynamic(() => import("@/store/redux-provider"), {
+  ssr: false,
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,11 +60,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* <Navbar /> */}
-        {isDashboardPage && <Navbar />}
-        {isDashboardPage && <Sidebar />}{" "}
-        {/* Conditionally render the Sidebar */}
-        {children}
+        <ReduxProvider>
+          <WagmiProvider config={config}>
+            <QueryClientProvider client={queryClient}>
+              <RainbowKitProvider
+                theme={lightTheme({
+                  accentColor: "#acb631",
+                  accentColorForeground: "white",
+                  borderRadius: "medium",
+                  fontStack: "system",
+                })}
+              >
+                {/* <Navbar /> */}
+                {isDashboardPage && <Navbar />}
+                {/* Conditionally render the Sidebar */}
+                {children}
+                {isDashboardPage && <Footer />}
+              </RainbowKitProvider>
+            </QueryClientProvider>
+          </WagmiProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -2,18 +2,16 @@
 
 import Link from "next/link";
 import React from "react";
-import { Search, Menu, ShoppingCart } from "lucide-react";
+import { Search, ShoppingCart } from "lucide-react";
+import Image from "next/image";
+import img2 from "@/assets/logo 1.png";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white border-b-2 border-gray-200 px-[250px] py-3">
+    <nav className="bg-white border-b-2 border-gray-200 px-[250px] py-3 z-50 relative">
       <div className="container mx-auto flex justify-between items-center">
         <Link href={"/"}>
-          <img
-            src="https://media.istockphoto.com/id/500613911/photo/leaf.jpg?s=1024x1024&w=is&k=20&c=GhJtbqFGgVDJu_kqEgWEScJ7qC4kyCKx6d-8m_429LM="
-            alt="Leaf Image"
-            className="w-20 h-20 object-cover" // Sets the width and height to 5rem (80px)
-          />
+          <Image src={img2} width={100} height={100} alt="" />
         </Link>
         {/* Left Side - Search Input */}
         <div className="relative w-full md:w-60 mr-4">
@@ -22,7 +20,7 @@ const Navbar = () => {
             placeholder="Search for products"
             className="pl-4 pr-10 py-2 w-full border-2 border-gray-300 bg-white rounded-lg focus:outline-none focus:border-blue-500"
           />
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+          <div className="absolute cursor-pointer inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
             <Search className="text-gray-400" />
           </div>
         </div>

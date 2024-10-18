@@ -28,23 +28,23 @@ const AdminLogin = () => {
     }
   }, []);
 
-  async function connectToNamiWallet() {
-    try {
-      const nami = await window.cardano.nami.enable();
-      const addresses = await nami.getUsedAddresses();
-      const message = "you are logging in to naturopura";
-      const hexMessage = stringToHex(message); // Convert the message to hex
+  // async function connectToNamiWallet() {
+  //   try {
+  //     const nami = await window.cardano.nami.enable();
+  //     const addresses = await nami.getUsedAddresses();
+  //     const message = "you are logging in to naturopura";
+  //     const hexMessage = stringToHex(message); // Convert the message to hex
 
-      const signature = await nami.signData(addresses[0], hexMessage);
-      console.log("Wallet connected and data signed:", signature);
-      console.log("error before ");
-      dispatch(Login({ key: signature.key, signature: signature.signature }));
-      console.log("error after ");
-    } catch (error) {
-      console.log("Error connecting to Nami wallet:", error);
-      toast.error("Error connecting to Nami wallet!");
-    }
-  }
+  //     const signature = await nami.signData(addresses[0], hexMessage);
+  //     console.log("Wallet connected and data signed:", signature);
+  //     console.log("error before ");
+  //     dispatch(Login({ key: signature.key, signature: signature.signature }));
+  //     console.log("error after ");
+  //   } catch (error) {
+  //     console.log("Error connecting to Nami wallet:", error);
+  //     toast.error("Error connecting to Nami wallet!");
+  //   }
+  // }
 
   return (
     <div className="">
